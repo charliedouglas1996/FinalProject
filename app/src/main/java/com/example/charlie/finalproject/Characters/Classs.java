@@ -1,6 +1,15 @@
-package com.example.charlie.finalproject;
+package com.example.charlie.finalproject.Characters;
 
-public class Classes {
+import java.util.ArrayList;
+
+public abstract class Classs {
+
+    private int level=1;
+    private int proficiencyBonus=2;
+    private int hitPoints;
+    private int hitDice;
+    ArrayList<String> features;
+
     public static final String[][] classQuestionString={
             {"How do you react to danger?", "I don't mind charging in","I deal with it from a safe distance"},//0
             {"Are you more strong or nimble?","Strong","Nimble"},//1

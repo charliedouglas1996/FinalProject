@@ -1,16 +1,15 @@
 package com.example.charlie.finalproject;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.charlie.finalproject.Characters.Race;
 
 public class RaceQuizFragment extends Fragment {
     private TextView question;
@@ -25,8 +24,8 @@ public class RaceQuizFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_quiz, container, false);
-        questionString=Race.raceQuestionString;
+        View view= inflater.inflate(R.layout.fragment_race_quiz, container, false);
+        questionString= Race.raceQuestionString;
         questionsInt=Race.raceQuestionsInt;
         if (questionString.length != questionsInt.length) qNo = -1;
         question = (TextView) view.findViewById(R.id.question);
@@ -63,7 +62,8 @@ public class RaceQuizFragment extends Fragment {
                 qNo=questionsInt[qNo][0];
                 if(checkRace(qNo)<Race.raceDescriptions.length){
                     CreatorActivity.setRace(checkRace(qNo));
-                    ((CreatorActivity)getActivity()).setViewPager(2);
+                    if(CreatorActivity.getPage()==1)
+                        ((CreatorActivity)getActivity()).incPage();
                     setQuestion(qNo=0);
                     return;
                 }
@@ -77,7 +77,8 @@ public class RaceQuizFragment extends Fragment {
                 qNo=questionsInt[qNo][1];
                 if(checkRace(qNo)<Race.raceDescriptions.length){
                     CreatorActivity.setRace(checkRace(qNo));
-                    ((CreatorActivity)getActivity()).setViewPager(2);
+                    if(CreatorActivity.getPage()==1)
+                        ((CreatorActivity)getActivity()).incPage();
                     setQuestion(qNo=0);
                     return;
                 }
@@ -93,11 +94,12 @@ public class RaceQuizFragment extends Fragment {
                 setQuestion(qNo);
             }
         });
-        backButton=(Button)view.findViewById(R.id.back);
+        backButton=(Button)view.findViewById(R.id.backRaceQuiz);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((CreatorActivity)getActivity()).setViewPager(0);
+                if(CreatorActivity.getPage()==1)
+                    ((CreatorActivity)getActivity()).decPage();
             }
         });
     }

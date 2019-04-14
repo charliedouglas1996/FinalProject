@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.charlie.finalproject.Characters.Classs;
+
 public class ClassQuizFragment extends Fragment {
     private TextView question;
     private Button answer1;
@@ -22,9 +24,9 @@ public class ClassQuizFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_quiz, container, false);
-        questionString=Classes.classQuestionString;
-        questionsInt=Classes.classQuestionsInt;
+        View view= inflater.inflate(R.layout.fragment_class_quiz, container, false);
+        questionString= Classs.classQuestionString;
+        questionsInt= Classs.classQuestionsInt;
         if (questionString.length != questionsInt.length) qNo = -1;
         question = (TextView) view.findViewById(R.id.question);
         initButtons(view);
@@ -58,9 +60,10 @@ public class ClassQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 qNo=questionsInt[qNo][0];
-                if(checkClass(qNo)<Classes.classDescriptions.length){
+                if(checkClass(qNo)< Classs.classDescriptions.length){
                     CreatorActivity.setClasss(checkClass(qNo));
-                    ((CreatorActivity)getActivity()).setViewPager(4);
+                    if(CreatorActivity.getPage()==3)
+                        ((CreatorActivity)getActivity()).incPage();
                     setQuestion(qNo=0);
                     return;
                 }
@@ -73,9 +76,10 @@ public class ClassQuizFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 qNo=questionsInt[qNo][1];
-                if(checkClass(qNo)<Classes.classDescriptions.length){
+                if(checkClass(qNo)< Classs.classDescriptions.length){
                     CreatorActivity.setClasss(checkClass(qNo));
-                    ((CreatorActivity)getActivity()).setViewPager(4);
+                    if(CreatorActivity.getPage()==3)
+                        ((CreatorActivity)getActivity()).incPage();
                     setQuestion(qNo=0);
                     return;
                 }
@@ -92,16 +96,17 @@ public class ClassQuizFragment extends Fragment {
                 setQuestion(qNo);
             }
         });
-        backButton=(Button)view.findViewById(R.id.back);
+        backButton=(Button)view.findViewById(R.id.backClassQuiz);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((CreatorActivity)getActivity()).setViewPager(3);
+                if(CreatorActivity.getPage()==3)
+                    ((CreatorActivity)getActivity()).decPage();
             }
         });
     }
     private static int checkClass(int n){
-        int m=Classes.classDescriptions.length;
+        int m= Classs.classDescriptions.length;
         switch(n){
             case 9://Monk
                 m=5;

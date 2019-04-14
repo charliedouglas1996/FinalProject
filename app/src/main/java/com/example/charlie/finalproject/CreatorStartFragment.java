@@ -29,8 +29,10 @@ public class CreatorStartFragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.raceButton:
-                ((CreatorActivity)getActivity()).setViewPager(1);
+                if(CreatorActivity.getPage()==0)
+                    ((CreatorActivity)getActivity()).incPage();
                 break;
         }
     }
+
 }

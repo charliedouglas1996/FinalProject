@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.charlie.finalproject.Characters.Classs;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +20,7 @@ public class ClassDescriptionFragment extends Fragment {
     TextView className;
     TextView classDescription;
     Button backButton;
-    Button classButton;
+    Button endButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,7 +33,16 @@ public class ClassDescriptionFragment extends Fragment {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((CreatorActivity)getActivity()).setViewPager(1);
+                if(CreatorActivity.getPage()==4)
+                    ((CreatorActivity)getActivity()).decPage();
+            }
+        });
+        endButton=(Button)v.findViewById(R.id.endButton);
+        endButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(CreatorActivity.getPage()==4)
+                    ((CreatorActivity)getActivity()).incPage();
             }
         });
         return v;
@@ -47,11 +58,11 @@ public class ClassDescriptionFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if(isVisibleToUser){
-            if(CreatorActivity.getClasss()<Classes.classDescriptions.length){
-                className.setText(Classes.classDescriptions[CreatorActivity.getClasss()][0]);
+            if(CreatorActivity.getClasss()< Classs.classDescriptions.length){
+                className.setText(Classs.classDescriptions[CreatorActivity.getClasss()][0]);
             }
-            if(CreatorActivity.getClasss()<Classes.classDescriptions.length){
-                classDescription.setText(Classes.classDescriptions[CreatorActivity.getClasss()][1]);
+            if(CreatorActivity.getClasss()< Classs.classDescriptions.length){
+                classDescription.setText(Classs.classDescriptions[CreatorActivity.getClasss()][1]);
             }
         }
     }

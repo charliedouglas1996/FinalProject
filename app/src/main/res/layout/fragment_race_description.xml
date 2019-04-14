@@ -8,32 +8,34 @@
 
 
     <TextView
+        android:id="@+id/anchor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="anchor"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/raceName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/raceImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/raceName"
-        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/raceDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -41,27 +43,128 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/raceImage" />
+        app:layout_constraintTop_toBottomOf="@+id/raceName" />
+
+    <TextView
+        android:id="@+id/featureTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
+    <TextView
+        android:id="@+id/featureTextView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
 
     <Button
         android:id="@+id/backRace"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Go Back"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/anchor2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/classButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Next: Choose Class"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/anchor2" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="visible"
+        android:background="@color/buttonColor"
+        android:popupBackground="@color/buttonColor"
+        app:layout_constraintEnd_toEndOf="@+id/raceDescription"
+        app:layout_constraintStart_toStartOf="@+id/raceDescription"
+        app:layout_constraintTop_toBottomOf="@+id/raceDescription" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/buttonColor"
+        android:popupBackground="@color/buttonColor"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/anchor2"
+        app:layout_constraintStart_toStartOf="@+id/featureTextView"
+        app:layout_constraintTop_toBottomOf="@+id/featureTextView" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/buttonColor"
+        android:popupBackground="@color/buttonColor"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/featureTextView"
+        app:layout_constraintStart_toEndOf="@+id/anchor2"
+        app:layout_constraintTop_toBottomOf="@+id/featureTextView" />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="visible"
+        android:background="@color/buttonColor"
+        android:popupBackground="@color/buttonColor"
+        app:layout_constraintEnd_toEndOf="@+id/anchor2"
+        app:layout_constraintStart_toStartOf="@+id/featureTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/featureTextView2" />
+    <Spinner
+        android:id="@+id/spinner5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="visible"
+        android:background="@color/buttonColor"
+        android:popupBackground="@color/buttonColor"
+        app:layout_constraintEnd_toEndOf="@+id/featureTextView2"
+        app:layout_constraintStart_toStartOf="@+id/anchor2"
+        app:layout_constraintTop_toBottomOf="@+id/featureTextView2" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -19,12 +19,13 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 //TODO:
-//- add synopsis page
-//- add confirm button
+//- check race stuff at end of the thing
 
-//- ability scores
 //- class options
-//- race options
+//- race features and finish races
+//- make quiz look good and finished
+//- save characters locally
+
 //- database
+//- pregens
 //- character sheet
-//- dice rolling

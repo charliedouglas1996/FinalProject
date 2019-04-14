@@ -46,12 +46,12 @@
         android:layout_marginBottom="8dp"
         android:text="Start Again"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintBottom_toTopOf="@+id/backRaceQuiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/back"
+        android:id="@+id/backRaceQuiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
