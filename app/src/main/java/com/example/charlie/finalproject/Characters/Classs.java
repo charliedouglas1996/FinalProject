@@ -6,9 +6,115 @@ public abstract class Classs {
 
     private int level=1;
     private int proficiencyBonus=2;
-    private int hitPoints;
     private int hitDice;
-    ArrayList<String> features;
+    private int[] abilityScores;
+    private int[] savingThrows;
+    private int[] skills;
+    private ArrayList<String[]> features;
+    private ArrayList<String[]> spells;
+    private ArrayList<String[]> cantrips;
+    private ArrayList<String> weaponProficiencies;
+    private ArrayList<String> armorProficiencies;
+    private ArrayList<String> toolProficiencies;
+    private ArrayList<String> equipment;
+
+    public int getLevel() {
+        return level;
+    }
+
+    public abstract String getName();
+
+    public int getProficiencyBonus() {
+        return proficiencyBonus;
+    }
+
+    public ArrayList<String[]> getCantrips() {
+        return cantrips;
+    }
+
+    public void setCantrips(ArrayList<String[]> cantrips) {
+        this.cantrips = cantrips;
+    }
+
+    public ArrayList<String> getToolProficiencies() {
+        return toolProficiencies;
+    }
+
+    public void setToolProficiencies(ArrayList<String> toolProficiencies) {
+        this.toolProficiencies = toolProficiencies;
+    }
+
+    public ArrayList<String[]> getSpells() {
+        return spells;
+    }
+
+    public void setSpells(ArrayList<String[]> spells) {
+        this.spells = spells;
+    }
+
+    public ArrayList<String> getWeaponProficiencies() {
+        return weaponProficiencies;
+    }
+
+    public void setWeaponProficiencies(ArrayList<String> weaponProficiencies) {
+        this.weaponProficiencies = weaponProficiencies;
+    }
+
+    public int[] getSkills() {
+        return skills;
+    }
+
+    public void setSkills(int[] skills) {
+        this.skills = skills;
+    }
+
+    public ArrayList<String> getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(ArrayList<String> equipment) {
+        this.equipment = equipment;
+    }
+
+    public ArrayList<String> getArmorProficiencies() {
+        return armorProficiencies;
+    }
+
+    public void setArmorProficiencies(ArrayList<String> armorProficiencies) {
+        this.armorProficiencies = armorProficiencies;
+    }
+
+    public int[] getAbilityScores() {
+        return abilityScores;
+    }
+
+    public void setAbilityScores(int[] abilityScores) {
+        this.abilityScores = abilityScores;
+    }
+
+    public int[] getSavingThrows() {
+        return savingThrows;
+    }
+
+    public void setSavingThrows(int[] savingThrows) {
+        this.savingThrows = savingThrows;
+    }
+
+    public int getHitDice() {
+        return hitDice;
+    }
+
+    public void setHitDice(int hitDice) {
+        this.hitDice = hitDice;
+    }
+
+    public ArrayList<String[]> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(ArrayList<String[]> features) {
+        this.features = features;
+    }
 
     public static final String[][] classQuestionString={
             {"How do you react to danger?", "I don't mind charging in","I deal with it from a safe distance"},//0

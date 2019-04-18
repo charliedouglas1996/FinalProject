@@ -11,12 +11,11 @@ public abstract class Race {
     private String size;
     private String sizeDescription;
     private ArrayList<String> languages;
-    private ArrayList<String> features;
+    private ArrayList<String[]> features;
     private ArrayList<String> spells;
     private boolean darkvision;
     private String resistance;
 
-    public abstract void updateRace();
 
     public static final String[][] raceQuestionString={
             {"Do your people have strong sense of community?", "Yes, we are very close ","No, my people are very disjointed"},//0
@@ -93,6 +92,7 @@ public abstract class Race {
     // 7 human
     // 8 tiefling
 
+    public abstract String getName();
 
     public int getSpeed() {
         return speed;
@@ -150,11 +150,11 @@ public abstract class Race {
         this.languages = languages;
     }
 
-    public ArrayList<String> getFeatures() {
+    public ArrayList<String[]> getFeatures() {
         return features;
     }
 
-    public void setFeatures(ArrayList<String> features) {
+    public void setFeatures(ArrayList<String[]> features) {
         this.features = features;
     }
 

@@ -112,6 +112,20 @@
         app:layout_constraintTop_toBottomOf="@+id/raceDescription" />
 
     <Spinner
+        android:id="@+id/spinner6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        android:background="@color/buttonColor"
+        android:popupBackground="@color/buttonColor"
+        app:layout_constraintEnd_toEndOf="@+id/featureTextView"
+        app:layout_constraintStart_toStartOf="@+id/featureTextView"
+        app:layout_constraintTop_toBottomOf="@+id/featureTextView" />
+
+    <Spinner
         android:id="@+id/spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -120,7 +134,7 @@
         android:layout_marginEnd="8dp"
         android:background="@color/buttonColor"
         android:popupBackground="@color/buttonColor"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/anchor2"
         app:layout_constraintStart_toStartOf="@+id/featureTextView"
         app:layout_constraintTop_toBottomOf="@+id/featureTextView" />
@@ -134,7 +148,7 @@
         android:layout_marginEnd="16dp"
         android:background="@color/buttonColor"
         android:popupBackground="@color/buttonColor"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/featureTextView"
         app:layout_constraintStart_toEndOf="@+id/anchor2"
         app:layout_constraintTop_toBottomOf="@+id/featureTextView" />
@@ -146,7 +160,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:background="@color/buttonColor"
         android:popupBackground="@color/buttonColor"
         app:layout_constraintEnd_toEndOf="@+id/anchor2"
@@ -159,7 +173,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:background="@color/buttonColor"
         android:popupBackground="@color/buttonColor"
         app:layout_constraintEnd_toEndOf="@+id/featureTextView2"

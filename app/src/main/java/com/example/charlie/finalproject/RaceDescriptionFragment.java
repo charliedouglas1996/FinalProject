@@ -38,6 +38,7 @@ public class RaceDescriptionFragment extends Fragment {
     Spinner spinner3;
     Spinner spinner4;
     Spinner spinner5;
+    Spinner spinner6;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,6 +76,7 @@ public class RaceDescriptionFragment extends Fragment {
         spinner3=(Spinner)v.findViewById(R.id.spinner3);
         spinner4=(Spinner)v.findViewById(R.id.spinner4);
         spinner5=(Spinner)v.findViewById(R.id.spinner5);
+        spinner6=(Spinner)v.findViewById(R.id.spinner6);
         return v;
     }
 
@@ -139,12 +141,12 @@ public class RaceDescriptionFragment extends Fragment {
                     featureTextView.setVisibility(View.VISIBLE);
                     featureTextView.setText(Elf.cantrip());
                     final String[] wizList= Wizard.spellList[0];
-                    spinner2.setVisibility(View.VISIBLE);
+                    spinner6.setVisibility(View.VISIBLE);
                     adapter2 = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,wizList);
                     adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    spinner2.setAdapter(adapter2);
-                    spinner2.setSelection(CreatorActivity.getCantrip());
-                    spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    spinner6.setAdapter(adapter2);
+                    spinner6.setSelection(CreatorActivity.getCantrip());
+                    spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                             CreatorActivity.setCantrip(position);

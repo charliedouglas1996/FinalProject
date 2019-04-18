@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Human extends Race {
 
-    private static final int RACE=7;
+    public static final int RACE=7;
     public Human(String language){
         setAge("Humans reach adulthood in their late teens and live less than a century.");
         setAlignment("Humans tend toward no particular alignment. The best and the worst are found among them.");
@@ -17,7 +17,11 @@ public class Human extends Race {
         setSize("Medium");
         setSizeDescription("Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall.");
         setSpeed(30);
-        ArrayList<String> features=new ArrayList<>();
+        ArrayList<String[]> features=new ArrayList<>();
+        String[] featureASI={"Ability Score Increase","Your ability scores each increase by 1.\n"};
+        features.add(featureASI);
+        String[] featureLanguage={"Languages","You can speak, read, and write Common and "+language+"\n"};
+        features.add(featureLanguage);
         setFeatures(features);
         ArrayList<String> lang=new ArrayList<>();
         lang.add("Common");
@@ -25,9 +29,6 @@ public class Human extends Race {
         setLanguages(lang);
     }
 
-    @Override
-    public void updateRace() {
-    }
 
     public static String raceDescription() {
         String desc="";
@@ -47,5 +48,9 @@ public class Human extends Race {
             else arr[i]=Character.langauges[j];
         }
         return arr;
+    }
+    @Override
+    public String getName() {
+        return Race.raceDescriptions[RACE][0];
     }
 }

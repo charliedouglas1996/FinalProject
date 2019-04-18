@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Dragonborn extends Race {
 
-    private static final int RACE=0;
+    public static final int RACE=0;
     private int ancestry;
 
     public Dragonborn(int ancestry){
@@ -17,10 +17,24 @@ public class Dragonborn extends Race {
         int[] arr={2,0,0,0,0,1};
         setaSI(arr);
         setDarkvision(false);
-        ArrayList<String> features=new ArrayList<>();
-//        features.add("Draconic Ancestry");
-//        features.add("Breath Weapon");
-//        features.add("Damage Resistance");
+        ArrayList<String[]> features=new ArrayList<>();
+        String[] featureASI={"Ability Score Increase","Your Strength score increases by 2, and your Charisma score increases by 1.\n"};
+        features.add(featureASI);
+        String[] featureLanguage={"Languages","You can speak, read, and write Common and Draconic. Draconic is thought to be " +
+                "one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other " +
+                "creatures and includes numerous hard consonants and sibilants\n"};
+        features.add(featureLanguage);
+        String[] feature1={"Draconic Ancestry","Your ancestors were "+ancestries[ancestry][0]+" dragons\n"};
+        features.add(feature1);
+        String[] feature2={"Breath Weapon","You can use your action to exhale destructive energy. " +
+                "When you use your breath weapon, each creature in a"+ancestries[ancestry][2]+"  make " +
+                "a "+ancestries[ancestry][3]+" saving throw. The DC for this saving throw equals 10 +" +
+                " your Constitution modifier. A creature takes 2d6 "+ancestries[ancestry][1]+"damage" +
+                " on a failed save, and half as much damage on a successful one" +
+                ". After you use your breath weapon, you can’t use it again until you complete a short or long rest.\n"};
+        features.add(feature2);
+        String[] feature3={"Damage Resistance","You have resistance to "+ancestries[ancestry][1]+" damage. (Damage is halved)"};
+        features.add(feature3);
         setFeatures(features);
         ArrayList<String> lang=new ArrayList<>();
         lang.add("Common");
@@ -31,11 +45,6 @@ public class Dragonborn extends Race {
         setSpeed(30);
         setResistance(ancestries[ancestry][1]);
         this.ancestry=ancestry;
-    }
-
-    @Override
-    public void updateRace() {
-        //breath weapon save DC is based on Constitution
     }
 
     public static String raceDescription() {
@@ -74,5 +83,10 @@ public class Dragonborn extends Race {
 
     public void setAncestry(int ancestry) {
         this.ancestry = ancestry;
+    }
+
+    @Override
+    public String getName() {
+        return Race.raceDescriptions[RACE][0];
     }
 }
