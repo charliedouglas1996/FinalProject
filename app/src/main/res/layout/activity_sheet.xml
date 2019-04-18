@@ -10,13 +10,25 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#fff">
+        android:background="@color/colorPrimaryDark"
+        android:focusableInTouchMode="true" >
 
         <TextView
+            android:id="@+id/hpTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Hit Points:"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:textColor="@android:color/background_light"
             android:id="@+id/nameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,19 +40,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <Button
-            android:id="@+id/page0Button"
+        <TextView
+            android:id="@+id/hitPMaxTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Button"
-            android:onClick="reset"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/currentHPTV"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/hpTV" />
+
+        <EditText
+            android:id="@+id/currentHPTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/background_light"
+            app:layout_constraintEnd_toStartOf="@+id/hitPMaxTV"
+            app:layout_constraintTop_toBottomOf="@+id/hpTV" />
+
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.v4.view.ViewPager
@@ -122,7 +145,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/num2"
-            android:background="#fff"/>
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/background_light"/>
 
         <TextView
             android:id="@+id/resultNumber"

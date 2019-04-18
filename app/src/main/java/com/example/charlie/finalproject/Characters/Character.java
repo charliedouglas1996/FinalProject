@@ -22,11 +22,18 @@ public class Character {
     private ArrayList<String> spells;
     private ArrayList<String> cantrips;
 
-    public Character(Race r,Classs c,String n){
+    public void setHitPointCurrent(int hitPointCurrent) {
+        this.hitPointCurrent = hitPointCurrent;
+    }
+
+    public Character(Race r, Classs c, String n){
         race=r;
         classs=c;
         name=n;
         abilityScores=addArrays(race.getaSI(),classs.getAbilityScores());
+        hitPointMax=c.getHitDice()+this.getConstitution();
+        hitPointCurrent=hitPointMax;
+        hitPointTemp=0;
     }
 
     public static int[] addArrays(int[] ar1, int[] ar2){
@@ -134,23 +141,23 @@ public class Character {
     }
 
     public int getIntelligence(){
-        return abilityScores[INTELLIGENCE]-10;
+        return (abilityScores[INTELLIGENCE]-10)/2;
     }
 
     public int getDexterity(){
-        return abilityScores[DEXTERITY]-10;
+        return (abilityScores[DEXTERITY]-10)/2;
     }
 
     public int getConstitution(){
-        return abilityScores[CONSTITUTION]-10;
+        return (abilityScores[CONSTITUTION]-10)/2;
     }
 
     public int getWisdom(){
-        return abilityScores[WISDOM]-10;
+        return (abilityScores[WISDOM]-10)/2;
     }
 
     public int getCharisma(){
-        return abilityScores[CHARISMA]-10/2;
+        return (abilityScores[CHARISMA]-10)/2;
     }
 
     public static final String[] langauges={

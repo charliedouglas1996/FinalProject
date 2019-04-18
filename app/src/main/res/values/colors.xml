@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#673AB7</color>
     <color name="colorAccent">#00BCD4</color>
     <color name="buttonColor">#D7D7D7</color>
+    <color name="my_spinner_text_color">#FFFFFF</color>
+
 </resources>

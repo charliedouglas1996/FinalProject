@@ -3,6 +3,8 @@ package com.example.charlie.finalproject;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,9 +27,9 @@ public class SheetActivity extends AppCompatActivity {
     ViewPager viewPager;
     Button button;
     private Character character;
-    EditText num1,num3;
+    EditText num1,num3, currentHPTV;
     boolean isPlus;
-    TextView plusMinus,resultNumber, nameTV;
+    TextView plusMinus,resultNumber, nameTV, hitPMaxTV;
     Button rollButton;
     Spinner num2;
 
@@ -41,28 +43,51 @@ public class SheetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sheet);
 //        num1=(EditText) findViewById(R.id.num1);
 
-        num1.setText(1+"");
-        num1=(EditText) findViewById(R.id.num1);
         num2=(Spinner)findViewById(R.id.spinnerN);
+        num1=(EditText) findViewById(R.id.num1);
         num3=(EditText) findViewById(R.id.num3);
         num2.setSelection(5);
+        num1.setText(1+"");
         num3.setText(0+"");
         isPlus=true;
         plusMinus=(TextView)findViewById(R.id.plusMinus);
         resultNumber=(TextView)findViewById(R.id.resultNumber);
         nameTV=(TextView)findViewById(R.id.nameTV);
         rollButton=(Button) findViewById(R.id.rollButton);
-//        spinner1=(Spinner)findViewById(R.id.spinnerN);
+        currentHPTV=(EditText)findViewById(R.id.currentHPTV);
+        hitPMaxTV=(TextView)findViewById(R.id.hitPMaxTV);
 
         Race race=new Human("Deep speech");
         Classs classs=new Barbarian();
         character=new Character(race,classs,"charles");
         String raceName=race.getName();
-
         String classsName=classs.getName();
         nameTV.setText(character.getName()+" - "+raceName+" "+classsName);
+        int hpMax=character.getHitPointMax();
+        hitPMaxTV.setText("/"+hpMax);
+        currentHPTV.setText(character.getHitPointCurrent()+"");
+        currentHPTV.addTextChangedListener(new TextWatcher() {
 
-        button=(Button)findViewById(R.id.page0Button);
+            // the user's changes are saved here
+            public void onTextChanged(CharSequence c, int start, int before, int count) {
+                String chars=c.toString();
+                if(chars.equals(""))
+                    character.setHitPointCurrent(0);
+                else if(Integer.parseInt(chars)<character.getHitPointMax())
+                    character.setHitPointCurrent(Integer.parseInt(chars));
+                else
+                    character.setHitPointCurrent(character.getHitPointMax());
+            }
+
+            public void beforeTextChanged(CharSequence c, int start, int count, int after) {
+                // this space intentionally left blank
+            }
+
+            public void afterTextChanged(Editable c) {
+                // this one too
+            }
+        });
+
         viewPager=(ViewPager) findViewById(R.id.sheetPager);
         setupViewPager(viewPager);
     }

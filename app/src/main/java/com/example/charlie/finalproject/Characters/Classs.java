@@ -183,17 +183,17 @@ public abstract class Classs {
     };
 
     public static final String[][] classDescriptions={
-            {"barbarian","barb description"},
-            {"bard","bard escription"},
-            {"cleric","c description"},
-            {"druid","d escription"},
-            {"fighter","f description"},
-            {"monk","m description"},
-            {"paladin","p description"},
-            {"ranger","ra description"},
-            {"rogue","ro description"},
-            {"sorcerer","s description"},
-            {"warlock","wa description"},
-            {"wizard","wi description"}
+            {"Barbarian","barb description"},
+            {"Bard","bard escription"},
+            {"Cleric","c description"},
+            {"Druid","d escription"},
+            {"Fighter","f description"},
+            {"Monk","m description"},
+            {"Paladin","p description"},
+            {"Ranger","ra description"},
+            {"Rogue","ro description"},
+            {"Sorcerer","s description"},
+            {"Warlock","wa description"},
+            {"Wizard","wi description"}
     };
 }
