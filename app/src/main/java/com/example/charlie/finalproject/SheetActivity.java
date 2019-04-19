@@ -1,13 +1,16 @@
 package com.example.charlie.finalproject;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -32,6 +35,7 @@ public class SheetActivity extends AppCompatActivity {
     TextView plusMinus,resultNumber, nameTV, hitPMaxTV;
     Button rollButton;
     Spinner num2;
+    ConstraintLayout bar2;
 
     public Character getCharacter() {
         return character;
@@ -48,7 +52,6 @@ public class SheetActivity extends AppCompatActivity {
         num3=(EditText) findViewById(R.id.num3);
         num2.setSelection(5);
         num1.setText(1+"");
-        num3.setText(0+"");
         isPlus=true;
         plusMinus=(TextView)findViewById(R.id.plusMinus);
         resultNumber=(TextView)findViewById(R.id.resultNumber);
@@ -56,6 +59,7 @@ public class SheetActivity extends AppCompatActivity {
         rollButton=(Button) findViewById(R.id.rollButton);
         currentHPTV=(EditText)findViewById(R.id.currentHPTV);
         hitPMaxTV=(TextView)findViewById(R.id.hitPMaxTV);
+        bar2=(ConstraintLayout)findViewById(R.id.layout2);
 
         Race race=new Human("Deep speech");
         Classs classs=new Barbarian();
@@ -88,6 +92,32 @@ public class SheetActivity extends AppCompatActivity {
             }
         });
 
+        LinearLayout layoutLi=(LinearLayout) ((ViewGroup)bar2).getChildAt(0);
+        TextView tv=(TextView)((ViewGroup)layoutLi).getChildAt(0);
+        tv.setText("+"+character.getClasss().getProficiencyBonus());
+        tv=(TextView)((ViewGroup)layoutLi).getChildAt(1);
+        tv.setText("Proficiency\nbonus");
+        layoutLi=(LinearLayout) ((ViewGroup)bar2).getChildAt(1);
+        tv=(TextView)((ViewGroup)layoutLi).getChildAt(0);
+        tv.setText(""+character.getRace().getSpeed()+" ft.");
+        tv=(TextView)((ViewGroup)layoutLi).getChildAt(1);
+        tv.setText("Walking\nspeed");
+        layoutLi=(LinearLayout) ((ViewGroup)bar2).getChildAt(2);
+        tv=(TextView)((ViewGroup)layoutLi).getChildAt(0);
+        String add="";
+        if(character.getDexterity()<0)
+            add="-";
+        if(character.getDexterity()>0)
+            add="+";
+        tv.setText(add+character.getDexterity()+"");
+        tv=(TextView)((ViewGroup)layoutLi).getChildAt(1);
+        tv.setText("Initiative");
+        layoutLi=(LinearLayout) ((ViewGroup)bar2).getChildAt(3);
+        tv=(TextView)((ViewGroup)layoutLi).getChildAt(0);
+        tv.setText(""+character.getArmorClass()+"");
+        tv=(TextView)((ViewGroup)layoutLi).getChildAt(1);
+        tv.setText("Armor\nclass");
+
         viewPager=(ViewPager) findViewById(R.id.sheetPager);
         setupViewPager(viewPager);
     }
@@ -95,7 +125,7 @@ public class SheetActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager){
         SectionsStatePagerAdapter adapter=new SectionsStatePagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new SheetAFragment(),"sheet A");//0
-        adapter.addFragment(new SheetAFragment(),"sheet A");//1
+        adapter.addFragment(new SheetBFragment(),"sheet B");//1
         adapter.addFragment(new SheetAFragment(),"sheet A");//2
         viewPager.setAdapter(adapter);
     }

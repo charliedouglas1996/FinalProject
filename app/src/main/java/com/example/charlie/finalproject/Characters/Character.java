@@ -22,6 +22,7 @@ public class Character {
     private ArrayList<String> spells;
     private ArrayList<String> cantrips;
 
+
     public void setHitPointCurrent(int hitPointCurrent) {
         this.hitPointCurrent = hitPointCurrent;
     }
@@ -34,6 +35,11 @@ public class Character {
         hitPointMax=c.getHitDice()+this.getConstitution();
         hitPointCurrent=hitPointMax;
         hitPointTemp=0;
+        if(classs.getName().equals("Barbarian")){
+            armorClass=10+getDexterity()+getConstitution();
+        }
+        else armorClass=10+getDexterity();
+        skill=classs.getSkills();
     }
 
     public static int[] addArrays(int[] ar1, int[] ar2){
@@ -130,6 +136,7 @@ public class Character {
     public int[] getAbilityScores() {
         return abilityScores;
     }
+
     public int getAbilityScore(int i) {
         if(i<abilityScores.length)
             return abilityScores[i];
@@ -137,27 +144,27 @@ public class Character {
     }
 
     public int getStrength(){
-        return (abilityScores[STRENGTH]-10)/2;
+        return getModifier(abilityScores[STRENGTH]);
     }
 
     public int getIntelligence(){
-        return (abilityScores[INTELLIGENCE]-10)/2;
+        return getModifier(abilityScores[INTELLIGENCE]);
     }
 
     public int getDexterity(){
-        return (abilityScores[DEXTERITY]-10)/2;
+        return getModifier(abilityScores[DEXTERITY]);
     }
 
     public int getConstitution(){
-        return (abilityScores[CONSTITUTION]-10)/2;
+        return getModifier(abilityScores[CONSTITUTION]);
     }
 
     public int getWisdom(){
-        return (abilityScores[WISDOM]-10)/2;
+        return getModifier(abilityScores[WISDOM]);
     }
 
     public int getCharisma(){
-        return (abilityScores[CHARISMA]-10)/2;
+        return getModifier(abilityScores[CHARISMA]);
     }
 
     public static final String[] langauges={
@@ -242,6 +249,27 @@ public class Character {
             "Sleight of Hand",//15
             "Stealth",//16
             "Survival"//17
+    };//
+
+    public static final String[] skillsMod={
+            "DEX",//0
+            "WIS",//1
+            "INT",//2
+            "STR",//3
+            "CHA",//4
+            "INT",//5
+            "WIS",//6
+            "CHA",//7
+            "INT",//8
+            "WIS",//9
+            "INT",//10
+            "WIS",//11
+            "CHA",//12
+            "CHA",//13
+            "INT",//14
+            "DEX",//15
+            "DEX",//16
+            "WIS"//17
     };//
 
     public static final String[] armor={
