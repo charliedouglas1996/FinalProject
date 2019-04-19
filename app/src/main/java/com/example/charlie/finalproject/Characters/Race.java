@@ -72,7 +72,7 @@ public abstract class Race {
             {"Half-elf","Half-elves combine what some say are the best qualities of their elf and " +
                     "human parents. Many half-elves, unable to fit into either society, choose lives " +
                     "of solitary wandering or join with other misfits and outcasts in the adventuring life."},
-            {"Half-Orc","Half-orcs’ grayish pigmentation, sloping foreheads, jutting jaws, prominent " +
+            {"Half-orc","Half-orcs’ grayish pigmentation, sloping foreheads, jutting jaws, prominent " +
                     "teeth, and towering builds make their orcish heritage plain for all to see."},
             {"Human","Humans are the most adaptable and ambitious people among the common races. " +
                     "Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds."},

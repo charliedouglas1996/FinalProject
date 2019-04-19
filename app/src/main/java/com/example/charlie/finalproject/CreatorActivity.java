@@ -45,13 +45,7 @@ public class CreatorActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    @Override
-    public void onBackPressed() {
-        if(getPage()==0){
-            super.onBackPressed();
-        }
-        else decPage();
-    }
+
 
     public void setViewPager(int fragmentNumber){
         viewPager.setCurrentItem(fragmentNumber);

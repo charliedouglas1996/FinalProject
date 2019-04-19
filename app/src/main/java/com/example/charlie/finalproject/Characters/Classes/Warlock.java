@@ -13,9 +13,9 @@ public class Warlock extends Classs {
 
     public Warlock(){
         setHitDice(8);
-        ArrayList<String> profs=new ArrayList<>();
-        profs.add("Light Armor");
-        setWeaponProficiencies(profs);
+        ArrayList<String> aProfs=new ArrayList<>();
+        aProfs.add("Light Armor");
+        setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
         wProfs.add("Simple Weapons");
         setWeaponProficiencies(wProfs);
@@ -54,6 +54,7 @@ public class Warlock extends Classs {
         equipment.add("Component pouch");
         equipment.add("Scholar's Pack");
         setEquipment(equipment);
+        setSpellSlots(1);
         //Features: Otherworldly Patron, Pact Magic
 
         ArrayList<String[]> features= new ArrayList<>();

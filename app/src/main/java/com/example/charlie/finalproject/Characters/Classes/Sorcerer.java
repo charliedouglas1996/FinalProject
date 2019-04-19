@@ -53,6 +53,7 @@ public class Sorcerer extends Classs {
         equipment.add("Component pouch");
         equipment.add("Explorer's Pack");
         setEquipment(equipment);
+        setSpellSlots(2);
         //Features: Spellcasting, Sorcerous Origin
         //Spells:
 

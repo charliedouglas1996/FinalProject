@@ -12,6 +12,7 @@ public abstract class Classs {
     private int[] skills;
     private ArrayList<String[]> features;
     private ArrayList<String[]> spells;
+    private int spellSlots;
     private ArrayList<String[]> cantrips;
     private ArrayList<String> weaponProficiencies;
     private ArrayList<String> armorProficiencies;
@@ -20,6 +21,14 @@ public abstract class Classs {
 
     public int getLevel() {
         return level;
+    }
+
+    public int getSpellSlots() {
+        return spellSlots;
+    }
+
+    public void setSpellSlots(int spellSlots) {
+        this.spellSlots = spellSlots;
     }
 
     public abstract String getName();
@@ -183,17 +192,41 @@ public abstract class Classs {
     };
 
     public static final String[][] classDescriptions={
-            {"Barbarian","barb description"},
-            {"Bard","bard escription"},
-            {"Cleric","c description"},
-            {"Druid","d escription"},
-            {"Fighter","f description"},
-            {"Monk","m description"},
-            {"Paladin","p description"},
-            {"Ranger","ra description"},
-            {"Rogue","ro description"},
-            {"Sorcerer","s description"},
-            {"Warlock","wa description"},
-            {"Wizard","wi description"}
+            {"Barbarian","A fierce warrior of a primitive background who can enter a battle rage. " +
+                    "\n\nBarbarians wear little to no armour, are savage and brutal melee combatants that are incredibly tough to take down when they fly into a combat rage." +
+                    "\n\nAn example of a barbarian is Marvel's 'The Incredible Hulk'"},
+            {"Bard","An inspiring magician whose power echoes the music of creation. " +
+                    "\n\nBards are magical minstrels. They cast spells that buff the party or hinder enemies and are generally the most adapt at both high and low social situations due to their musical entertaining skills." +
+                    "\n\nAn example of a bard is Marvel's 'Starlord'"},
+            {"Cleric","A priestly champion who wields divine magic in service of a higher power. " +
+                    "\n\nClerics are holy healers. Generally clerics are heavily armoured party healers that also serve as melee combatants. Useful in all parties." +
+                    "\n\nAn example of a cleric is Game of Thrones' 'Melisandre'"},
+            {"Druid","A priest of the Old Faith, wielding the powers of nature - moonlight and plant growth, fire and lightning - and adopting animal forms. " +
+                    "\n\nDruids are natural healers or vicious shape shifters. In tune with the wild druids can serve as party healers or take the form of animals to engage in combat. " +
+                    "\n\nAn example of a druid is DC's 'Beast Boy'"},
+            {"Fighter","A master of martial combat, skilled with a variety of weapons and armors. " +
+                    "\n\nFighters are heavily armed and armoured melee or ranged combatants. Trained in all weapons, armour and shields fighters can deal damage, take damage and defend the party. " +
+                    "\n\nAn example of a fighter is Marvel's 'Captain America'"},
+            {"Monk","A master of martial arts, skilled with fighting hands and martial monk weapons. " +
+                    "\n\nMonks are incredibly skilled spiritual warriors that can engage in melee combat. While they won't be doing as much damage as say a Paladin or Fighter they have a massive array of debilitating effects to disrupt enemies." +
+                    "\n\nAn example of a monk is Avatar's 'Aang'"},
+            {"Paladin","A holy warrior bound to a sacred oath. " +
+                    "\n\nHeavily clad in armour Paladins can do some modest healing like a lite-Cleric but focus more on smiting evil through holy spells and melee combat. Additionally, Paladins command respect for many classes in society and make excellent social characters." +
+                    "\n\nAn example of a paladin is Marvel's 'Thor'"},
+            {"Ranger","A master of ranged combat, one with nature. " +
+                    "\n\nRangers are ranged or melee hunters adept at surviving in the wilds. They can cast moderate amount of spells and are especially knowledgable about specific creatures and types of terrain." +
+                    "\n\nAn example of a ranger is Lord of the Ring's 'Aragorn'"},
+            {"Rogue","A scoundrel and agile warrior who uses stealth and trickery to overcome obstacles and enemies. " +
+                    "\n\nRogues are trained (self or otherwise) in underhanded tactics such as sneaking, stealing, picking pockets and locks, disable and setting traps. They fight with guile rather than strength. They can also be a smooth-talker depending on how they are made. Nobody will have a set of skills as diverse as the Rogue." +
+                    "\n\nAn example of a rogue is Star Wars' 'Han Solo'"},
+            {"Sorcerer","A spellcaster who draws on inherent magic from a gift or bloodline. " +
+                    "\n\nSorcerers are natural spell-casters. Where Wizards train Sorcerers have spellcasting in their blood. Their natural abilities also make them naturally good in dealing socially with people." +
+                    "\n\nAn example of a sorcerer is Marvel's 'Doctor Strange'"},
+            {"Warlock","A wielder of magic that is derived from a bargain with an extraplanar entity. " +
+                    "\n\nWhile Sorcerers have spellcasting as a natural ability and Wizards train Warlocks make a pact with a powerful being in exchange for power. This pact is often for good but can also be for evil." +
+                    "\n\nAn example of a warlock is DC's 'Green Lantern'"},
+            {"Wizard","A scholarly magic-user capable of manipulating the structures of reality. " +
+                    "\n\nNobody can match the diversity of a wizards spellbook and years of training. Their spells often make them the most powerful burst damage dealers in combat and their knowledge of Arcane lore and History are useful in many situations." +
+                    "\n\nAn example of a wizard is 'Harry Potter'"}
     };
 }

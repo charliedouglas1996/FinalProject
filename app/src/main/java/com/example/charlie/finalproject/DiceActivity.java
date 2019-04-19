@@ -14,7 +14,7 @@ public class DiceActivity extends AppCompatActivity {
 
     EditText num1,num2,num3;
     boolean isPlus;
-    TextView plusMinus,resultTextView,resultNumber;
+    TextView plusMinus,resultTextView,resultNumber,resultNumber2;
     Button rollButton;
 
     @Override
@@ -22,11 +22,14 @@ public class DiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice);
         num1=(EditText) findViewById(R.id.num1);
+        num1.setText(1+"");
         num2=(EditText) findViewById(R.id.num2);
+        num2.setText(20+"");
         num3=(EditText) findViewById(R.id.num3);
         isPlus=true;
         plusMinus=(TextView)findViewById(R.id.plusMinus);
         resultNumber=(TextView)findViewById(R.id.resultNumber);
+        resultNumber2=(TextView)findViewById(R.id.resultNumber2);
         resultTextView=(TextView)findViewById(R.id.resultTextView);
         rollButton=(Button) findViewById(R.id.rollButton);
     }
@@ -70,6 +73,7 @@ public class DiceActivity extends AppCompatActivity {
         }
         text+="="+result;
         resultTextView.setText(text);
+        resultNumber2.setText(resultNumber.getText().toString()+"\n"+resultNumber2.getText().toString());
         resultNumber.setText(""+result);
     }
 

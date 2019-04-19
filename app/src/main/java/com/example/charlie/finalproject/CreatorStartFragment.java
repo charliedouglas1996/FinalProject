@@ -21,6 +21,9 @@ public class CreatorStartFragment extends Fragment implements View.OnClickListen
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_creator_start, container, false);
         Button raceButton=(Button) v.findViewById(R.id.raceButton);
+        Button backButton=(Button) v.findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(this);
         raceButton.setOnClickListener(this);
         return v;
     }
@@ -32,7 +35,9 @@ public class CreatorStartFragment extends Fragment implements View.OnClickListen
                 if(CreatorActivity.getPage()==0)
                     ((CreatorActivity)getActivity()).incPage();
                 break;
+            case R.id.backButton:
+                getActivity().finish();
         }
     }
-
+//finishActivity()
 }

@@ -23,6 +23,7 @@ public class Barbarian extends Classs {
         wProfs.add("Simple Weapons");
         wProfs.add("Martial Weapons");
         setWeaponProficiencies(wProfs);
+        ArrayList<String> tProfs=new ArrayList<>();
         int[] saves={1,0,1,0,0,0};
         setSavingThrows(saves);
         int[] abScores={15,13,14,8,12,10};

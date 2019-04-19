@@ -55,6 +55,7 @@ public class Cleric extends Classs {
         equipment.add("Holy Symbol");
         equipment.add("Explorer's Pack");
         setEquipment(equipment);
+        setSpellSlots(2);
 
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Spellcasting","As a conduit for divine power, you can cast cleric spells\n" +

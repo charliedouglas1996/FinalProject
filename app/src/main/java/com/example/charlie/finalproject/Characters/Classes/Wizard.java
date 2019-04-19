@@ -52,6 +52,7 @@ public class Wizard extends Classs {
         equipment.add("Component pouch");
         equipment.add("Spellbook");
         setEquipment(equipment);
+        setSpellSlots(2);
 
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Spellcasting","As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power\n" +

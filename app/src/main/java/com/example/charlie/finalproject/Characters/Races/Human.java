@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public class Human extends Race {
 
     public static final int RACE=7;
-    public Human(String language){
+    public Human(){
+        String language="Dwarvish";
         setAge("Humans reach adulthood in their late teens and live less than a century.");
         setAlignment("Humans tend toward no particular alignment. The best and the worst are found among them.");
         int[] arr={1,1,1,1,1,1};
@@ -33,9 +34,9 @@ public class Human extends Race {
     public static String raceDescription() {
         String desc="";
         desc+=Race.raceDescriptions[RACE][1];
-        desc+="\n\n"+(new Human("")).getSizeDescription();
-        desc+="\n\n"+(new Human("")).getAge();
-        desc+="\n\nLanguages: You can speak, read, and write Common and one extra language of your choice:";
+        desc+="\n\n"+(new Human()).getSizeDescription();
+        desc+="\n\n"+(new Human()).getAge();
+//        desc+="\n\nLanguages: You can speak, read, and write Common and one extra language of your choice:";
         return desc;
     }
 

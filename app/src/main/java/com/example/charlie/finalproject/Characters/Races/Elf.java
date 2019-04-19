@@ -9,7 +9,9 @@ import java.util.ArrayList;
 public class Elf extends Race {
 
     public static final int RACE=2;
-    public Elf(int cantrip, String language){
+    public Elf(){
+        int cantrip=3;
+        String language="Sylvan";
         setAge("Although elves reach physical maturity at about the same age as humans, the elven " +
                 "understanding of adulthood goes beyond physical growth to encompass worldly " +
                 "experience. An elf typically claims adulthood and an adult name around the age of " +
@@ -62,9 +64,9 @@ public class Elf extends Race {
     public static String raceDescription() {
         String desc="";
         desc+=Race.raceDescriptions[RACE][1];
-        desc+="\n\n"+(new Elf(0,"")).getSizeDescription();
-        desc+="\n\n"+(new Elf(0,"")).getAge();
-        desc+="\n\nLanguages: You can speak, read, and write Common, Elvish, and one extra language of your choice.";
+        desc+="\n\n"+(new Elf()).getSizeDescription();
+        desc+="\n\n"+(new Elf()).getAge();
+//        desc+="\n\nLanguages: You can speak, read, and write Common, Elvish, and one extra language of your choice.";
         return desc;
     }
 

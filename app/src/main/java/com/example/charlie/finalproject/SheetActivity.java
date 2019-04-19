@@ -1,5 +1,6 @@
 package com.example.charlie.finalproject;
 
+import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -29,11 +30,17 @@ import com.example.charlie.finalproject.Characters.Classes.Warlock;
 import com.example.charlie.finalproject.Characters.Classes.Wizard;
 import com.example.charlie.finalproject.Characters.Classs;
 import com.example.charlie.finalproject.Characters.Race;
+import com.example.charlie.finalproject.Characters.Races.Dragonborn;
+import com.example.charlie.finalproject.Characters.Races.Dwarf;
+import com.example.charlie.finalproject.Characters.Races.Elf;
+import com.example.charlie.finalproject.Characters.Races.Gnome;
+import com.example.charlie.finalproject.Characters.Races.HalfElf;
+import com.example.charlie.finalproject.Characters.Races.HalfOrc;
+import com.example.charlie.finalproject.Characters.Races.Halfling;
 import com.example.charlie.finalproject.Characters.Races.Human;
+import com.example.charlie.finalproject.Characters.Races.Tiefling;
 
 import java.util.Random;
-
-import static com.example.charlie.finalproject.Characters.Character.getModifier;
 
 public class SheetActivity extends AppCompatActivity {
 
@@ -47,6 +54,7 @@ public class SheetActivity extends AppCompatActivity {
     Button rollButton;
     Spinner num2;
     ConstraintLayout bar2;
+    public static final String EXTRA = "id";
 
     public Character getCharacter() {
         return character;
@@ -56,7 +64,6 @@ public class SheetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sheet);
-//        num1=(EditText) findViewById(R.id.num1);
 
         num2=(Spinner)findViewById(R.id.spinnerN);
         num1=(EditText) findViewById(R.id.num1);
@@ -72,22 +79,13 @@ public class SheetActivity extends AppCompatActivity {
         hitPMaxTV=(TextView)findViewById(R.id.hitPMaxTV);
         bar2=(ConstraintLayout)findViewById(R.id.layout2);
 
-        Race race=new Human("Deep speech");
-//        Classs classs=new Barbarian();
-//        Classs classs=new Bard();
-//        Classs classs=new Cleric();
-        Classs classs=new Druid();
-//        Classs classs=new Fighter();
-//        Classs classs=new Monk();
-//        Classs classs=new Paladin();
-//        Classs classs=new Ranger();
-//        Classs classs=new Rogue();
-//        Classs classs=new Sorcerer();
-//        Classs classs=new Warlock();
-//        Classs classs=new Wizard();
-        character=new Character(race,classs,"charles");
-        String raceName=race.getName();
-        String classsName=classs.getName();
+        character=Character.getCharacter();
+        if(getIntent()!=null){
+            int id = (Integer)getIntent().getExtras().get(EXTRA);
+            character=Character.getCharacter(id);
+        }
+        String raceName=character.getRace().getName();
+        String classsName=character.getClasss().getName();
         nameTV.setText(character.getName()+" - "+raceName+" "+classsName);
         int hpMax=character.getHitPointMax();
         hitPMaxTV.setText("/"+hpMax);
@@ -146,9 +144,14 @@ public class SheetActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         SectionsStatePagerAdapter adapter=new SectionsStatePagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new SheetDFragment(),"sheet D");//3
         adapter.addFragment(new SheetAFragment(),"sheet A");//0
         adapter.addFragment(new SheetBFragment(),"sheet B");//1
+        adapter.addFragment(new SheetCFragment(),"sheet C");//2
+        adapter.addFragment(new SheetDFragment(),"sheet D");//3
+        adapter.addFragment(new SheetEFragment(),"sheet E");//4
+        if(character.getCantrips()!=null){
+            adapter.addFragment(new SheetFFragment(),"sheet F");//5
+        }
         viewPager.setAdapter(adapter);
     }
 

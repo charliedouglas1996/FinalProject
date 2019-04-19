@@ -64,6 +64,7 @@ public class Druid extends Classs {
         equipment.add("Druidic focus");
         equipment.add("Explorer's Pack");
         setEquipment(equipment);
+        setSpellSlots(2);
         //Features: Spellcasting, Druidic
         //Spells:
 

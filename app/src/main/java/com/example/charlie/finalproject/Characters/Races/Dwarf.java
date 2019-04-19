@@ -9,7 +9,8 @@ public class Dwarf extends Race {
 
     public static final int RACE=1;
 
-    public Dwarf(String tool){
+    public Dwarf(){
+        String tool="Smith’s tools";
         setAge("Dwarves mature at the same rate as humans, but they’re considered young until " +
                 "they reach the age of 50. On average, they live about 350 years.");
         setAlignment("Most dwarves are lawful, believing firmly in the benefits of a well-ordered" +
@@ -56,9 +57,9 @@ public class Dwarf extends Race {
     public static String raceDescription() {
         String desc="";
         desc+=Race.raceDescriptions[RACE][1];
-        desc+="\n\n"+(new Dwarf(null)).getSizeDescription();
-        desc+="\n\n"+(new Dwarf(null)).getAge();
-        desc+="\n\nTool Proficiency. You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.";
+        desc+="\n\n"+(new Dwarf()).getSizeDescription();
+        desc+="\n\n"+(new Dwarf()).getAge();
+//        desc+="\n\nTool Proficiency. You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.";
         return desc;
     }
 

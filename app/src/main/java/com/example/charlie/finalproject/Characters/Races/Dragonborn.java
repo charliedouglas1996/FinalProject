@@ -9,7 +9,8 @@ public class Dragonborn extends Race {
     public static final int RACE=0;
     private int ancestry;
 
-    public Dragonborn(int ancestry){
+    public Dragonborn(){
+        int ancestry=7;
         setAge("Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of " +
                 "a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.");
         setAlignment("Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war " +
@@ -50,9 +51,9 @@ public class Dragonborn extends Race {
     public static String raceDescription() {
         String desc="";
         desc+=Race.raceDescriptions[RACE][1];
-        desc+="\n\n"+(new Dragonborn(0)).getSizeDescription();
-        desc+="\n\n"+(new Dragonborn(0)).getAge();
-        desc+="\n\nDraconic Ancestry- You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry list. Your breath weapon and damage resistance are determined by the dragon type";
+        desc+="\n\n"+(new Dragonborn()).getSizeDescription();
+        desc+="\n\n"+(new Dragonborn()).getAge();
+//        desc+="\n\nDraconic Ancestry- You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry list. Your breath weapon and damage resistance are determined by the dragon type";
         return desc;
     }
 

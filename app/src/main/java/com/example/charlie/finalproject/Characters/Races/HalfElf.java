@@ -10,7 +10,12 @@ import java.util.ArrayList;
 public class HalfElf extends Race {
 
     public static final int RACE=5;
-    public HalfElf(int bonus1, int bonus2,String language, int skill1, int skill2){
+    public HalfElf(){
+        int skill1=9;
+        int skill2=15;
+        int bonus2=1;
+        int bonus1=2;
+        String language="Sylvan";
         setAge("Half-elves mature at the same rate humans do and reach adulthood around the " +
                 "age of 20. They live much longer than humans, however, often exceeding 180 years.");
         setAlignment("Half-elves share the chaotic bent of their elven heritage. They value " +
@@ -51,9 +56,9 @@ public class HalfElf extends Race {
     public static String raceDescription() {
         String desc="";
         desc+=Race.raceDescriptions[RACE][1];
-        desc+="\n\n"+(new HalfElf(0,1,"",0,1)).getSizeDescription();
-        desc+="\n\n"+(new HalfElf(0,1,"",0,1)).getAge();
-        desc+="\n\nLanguages: You can speak, read, and write Common, Elvish, and one extra language of your choice.";
+        desc+="\n\n"+(new HalfElf()).getSizeDescription();
+        desc+="\n\n"+(new HalfElf()).getAge();
+//        desc+="\n\nLanguages: You can speak, read, and write Common, Elvish, and one extra language of your choice.";
         return desc;
     }
 

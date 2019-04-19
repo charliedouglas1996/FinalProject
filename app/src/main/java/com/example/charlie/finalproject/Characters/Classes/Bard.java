@@ -60,6 +60,7 @@ public class Bard extends Classs {
         equipment.add("Lute");
         equipment.add("Entertainer's Pack");
         setEquipment(equipment);
+        setSpellSlots(2);
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Spellcasting","You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. " +
                 "Your spells are part of your vast repertoire, magic that you can tune to different situations.\n" +

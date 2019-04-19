@@ -40,4 +40,6 @@
         <item>19</item>
         <item>20</item>
     </string-array>
+    <string name="welcomeText">Welcome to the character creator!\n\nHere you will be asked a series of questions to best find you a suitable D&amp;D character.
+        \n\nSimply answer each question and all the work will be done for you. You will choose a race and a class for your character, then finally you will name them and play them.\n\nIf you do not like the sound of your character, you can start the process again to create a new character.</string>
 </resources>
