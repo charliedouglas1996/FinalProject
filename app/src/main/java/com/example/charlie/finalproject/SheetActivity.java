@@ -16,6 +16,17 @@ import android.widget.TextView;
 
 import com.example.charlie.finalproject.Characters.Character;
 import com.example.charlie.finalproject.Characters.Classes.Barbarian;
+import com.example.charlie.finalproject.Characters.Classes.Bard;
+import com.example.charlie.finalproject.Characters.Classes.Cleric;
+import com.example.charlie.finalproject.Characters.Classes.Druid;
+import com.example.charlie.finalproject.Characters.Classes.Fighter;
+import com.example.charlie.finalproject.Characters.Classes.Monk;
+import com.example.charlie.finalproject.Characters.Classes.Paladin;
+import com.example.charlie.finalproject.Characters.Classes.Ranger;
+import com.example.charlie.finalproject.Characters.Classes.Rogue;
+import com.example.charlie.finalproject.Characters.Classes.Sorcerer;
+import com.example.charlie.finalproject.Characters.Classes.Warlock;
+import com.example.charlie.finalproject.Characters.Classes.Wizard;
 import com.example.charlie.finalproject.Characters.Classs;
 import com.example.charlie.finalproject.Characters.Race;
 import com.example.charlie.finalproject.Characters.Races.Human;
@@ -62,7 +73,18 @@ public class SheetActivity extends AppCompatActivity {
         bar2=(ConstraintLayout)findViewById(R.id.layout2);
 
         Race race=new Human("Deep speech");
-        Classs classs=new Barbarian();
+//        Classs classs=new Barbarian();
+//        Classs classs=new Bard();
+//        Classs classs=new Cleric();
+        Classs classs=new Druid();
+//        Classs classs=new Fighter();
+//        Classs classs=new Monk();
+//        Classs classs=new Paladin();
+//        Classs classs=new Ranger();
+//        Classs classs=new Rogue();
+//        Classs classs=new Sorcerer();
+//        Classs classs=new Warlock();
+//        Classs classs=new Wizard();
         character=new Character(race,classs,"charles");
         String raceName=race.getName();
         String classsName=classs.getName();
@@ -106,7 +128,7 @@ public class SheetActivity extends AppCompatActivity {
         tv=(TextView)((ViewGroup)layoutLi).getChildAt(0);
         String add="";
         if(character.getDexterity()<0)
-            add="-";
+            add="";
         if(character.getDexterity()>0)
             add="+";
         tv.setText(add+character.getDexterity()+"");
@@ -124,9 +146,9 @@ public class SheetActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         SectionsStatePagerAdapter adapter=new SectionsStatePagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new SheetDFragment(),"sheet D");//3
         adapter.addFragment(new SheetAFragment(),"sheet A");//0
         adapter.addFragment(new SheetBFragment(),"sheet B");//1
-        adapter.addFragment(new SheetAFragment(),"sheet A");//2
         viewPager.setAdapter(adapter);
     }
 

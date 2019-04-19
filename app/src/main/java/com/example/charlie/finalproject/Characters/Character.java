@@ -18,9 +18,6 @@ public class Character {
     private ArrayList<String> weaponProficiencies;
     private ArrayList<String> armorProficiencies;
     private ArrayList<String> toolProficiencies;
-    private ArrayList<String> equipment;
-    private ArrayList<String> spells;
-    private ArrayList<String> cantrips;
 
 
     public void setHitPointCurrent(int hitPointCurrent) {
@@ -35,12 +32,38 @@ public class Character {
         hitPointMax=c.getHitDice()+this.getConstitution();
         hitPointCurrent=hitPointMax;
         hitPointTemp=0;
+        languages=race.getLanguages();
         if(classs.getName().equals("Barbarian")){
             armorClass=10+getDexterity()+getConstitution();
+        } else if(classs.getName().equals("Bard")){
+            armorClass=11+getDexterity();
+        } else if(classs.getName().equals("Cleric")){
+            armorClass=16+2;
+        } else if(classs.getName().equals("Druid")){
+            armorClass=11+2+getDexterity();
+        } else if(classs.getName().equals("Fighter")){
+            armorClass=16+2+1;
+        } else if(classs.getName().equals("Monk")){
+            armorClass=10+getDexterity()+getWisdom();
+        } else if(classs.getName().equals("Paladin")){
+            armorClass=16+2;
+        } else if(classs.getName().equals("Ranger")){
+            armorClass=11+getDexterity();
+            languages.add(langauges[10]);
+        } else if(classs.getName().equals("Rogue")){
+            armorClass=11+getDexterity();
+        } else if(classs.getName().equals("Sorcerer")){
+            armorClass=10+getDexterity();
+            languages.add(langauges[10]);
+        } else if(classs.getName().equals("Warlock")){
+            armorClass=11+getDexterity();
+        } else if(classs.getName().equals("Wizard")){
+            armorClass=10+getDexterity();
         }
-        else armorClass=10+getDexterity();
         skill=classs.getSkills();
     }
+
+    // Monks can use dex instead of STR for monk weapons
 
     public static int[] addArrays(int[] ar1, int[] ar2){
         int[] result=new int[ar1.length];
@@ -93,18 +116,6 @@ public class Character {
 
     public ArrayList<String> getToolProficiencies() {
         return toolProficiencies;
-    }
-
-    public ArrayList<String> getEquipment() {
-        return equipment;
-    }
-
-    public ArrayList<String> getSpells() {
-        return spells;
-    }
-
-    public ArrayList<String> getCantrips() {
-        return cantrips;
     }
 
     public String getName() {
@@ -345,9 +356,4 @@ public class Character {
     // half elves are proficient in 2 skills
     // half-orcs are proficient in intimidation
     // tieflings know thaumaturgy
-
-    // Barbarians and Monks have different AC
-    // Fighters have +1 AC
-    // Monks can use dex instead of STR for monk weapons
-    // rangers and sorcerers know draconic
 }

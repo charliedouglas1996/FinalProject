@@ -14,14 +14,14 @@ public class Ranger extends Classs {
     public Ranger(){
         setHitDice(10);
         ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("LightArmor");
-        aProfs.add("MediumArmor");
-        aProfs.add("Shield");
+        aProfs.add("Light Armor");
+        aProfs.add("Medium Armor");
+        aProfs.add("Shields");
 
         setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("SimpleWeapon");
-        wProfs.add("MartialWeapon");
+        wProfs.add("Simple Weapons");
+        wProfs.add("Martial Weapons");
         setWeaponProficiencies(wProfs);
         int[] saves={1,1,0,0,0,0};
         setSavingThrows(saves);
@@ -47,11 +47,12 @@ public class Ranger extends Classs {
         };
         setSkills(skills);
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("Leather armor");
         equipment.add("Shortsword");
         equipment.add("Shortsword");
-        equipment.add("Explorer's pack");
         equipment.add("Longbow");
+        equipment.add("Leather armor");
+        equipment.add("Explorer's Pack");
+        setEquipment(equipment);
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Favored Enemy","You have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.\n" +
                 "The type of your favored enemy is dragons. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.\n" +

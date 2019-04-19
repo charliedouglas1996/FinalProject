@@ -14,19 +14,19 @@ public class Bard extends Classs {
     public Bard(){
         setHitDice(8);
         ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("LightArmor");
+        aProfs.add("Light Armor");
         setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("SimpleWeapon");
-        wProfs.add("Crossbow, hand");
-        wProfs.add("Longsword");
-        wProfs.add("Rapier");
-        wProfs.add("Shortsword");
+        wProfs.add("Simple Weapons");
+        wProfs.add("Hand Crossbows");
+        wProfs.add("Longswords");
+        wProfs.add("Rapiers");
+        wProfs.add("Shortswords");
         setWeaponProficiencies(wProfs);
         ArrayList<String> tProfs=new ArrayList<>();
         tProfs.add("Bagpipes");
-        tProfs.add("Drum");
-        tProfs.add("Lute");
+        tProfs.add("Drums");
+        tProfs.add("Lutes");
         setToolProficiencies(tProfs);
         int[] saves={0,1,0,0,0,1};
         setSavingThrows(saves);
@@ -54,11 +54,11 @@ public class Bard extends Classs {
         };
         setSkills(skills);
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("Leather armor");
         equipment.add("Rapier");
         equipment.add("Dagger");
+        equipment.add("Leather armor");
         equipment.add("Lute");
-        equipment.add("Entertainer's pack");
+        equipment.add("Entertainer's Pack");
         setEquipment(equipment);
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Spellcasting","You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. " +

@@ -15,13 +15,13 @@ public class Barbarian extends Classs {
     public Barbarian(){
         setHitDice(12);
         ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("LightArmor");
-        aProfs.add("MediumArmor");
-        aProfs.add("Shield");
+        aProfs.add("Light Armor");
+        aProfs.add("Medium Armor");
+        aProfs.add("Shields");
         setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("SimpleWeapon");
-        wProfs.add("MartialWeapon");
+        wProfs.add("Simple Weapons");
+        wProfs.add("Martial Weapons");
         setWeaponProficiencies(wProfs);
         int[] saves={1,0,1,0,0,0};
         setSavingThrows(saves);
@@ -52,11 +52,11 @@ public class Barbarian extends Classs {
         equipment.add("Greataxe");
         equipment.add("Handaxe");
         equipment.add("Handaxe");
+        equipment.add("Javelin");
+        equipment.add("Javelin");
+        equipment.add("Javelin");
+        equipment.add("Javelin");
         equipment.add("Explorer's Pack");
-        equipment.add("Javelin");
-        equipment.add("Javelin");
-        equipment.add("Javelin");
-        equipment.add("Javelin");
         setEquipment(equipment);
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Rage","In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. " +

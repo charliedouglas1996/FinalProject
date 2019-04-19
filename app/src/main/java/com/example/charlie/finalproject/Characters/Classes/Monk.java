@@ -13,12 +13,9 @@ public class Monk extends Classs {
 
     public Monk(){
         setHitDice(8);
-        ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("");
-        setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("SimpleWeapon");
-        wProfs.add("Shortsword");
+        wProfs.add("Simple Weapons");
+        wProfs.add("Shortswords");
         setWeaponProficiencies(wProfs);
         int[] saves={1,1,0,0,0,0};
         setSavingThrows(saves);
@@ -46,6 +43,7 @@ public class Monk extends Classs {
         ArrayList<String> equipment=new ArrayList<>();
         equipment.add("Shortsword");
         equipment.add("Explorer's Pack");
+        setEquipment(equipment);
         for(int i=0;i<10;i++)
             equipment.add("Dart");
         ArrayList<String[]> features= new ArrayList<>();

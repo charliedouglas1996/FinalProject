@@ -14,13 +14,13 @@ public class Cleric extends Classs {
     public Cleric(){
         setHitDice(8);
         ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("LightArmor");
-        aProfs.add("MediumArmor");
-        aProfs.add("HeavyArmor");
-        aProfs.add("Shield");
+        aProfs.add("Light Armor");
+        aProfs.add("Medium Armor");
+        aProfs.add("Heavy Armor");
+        aProfs.add("Shields");
         setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("SimpleWeapon");
+        wProfs.add("Simple Weapons");
         setWeaponProficiencies(wProfs);
         int[] saves={0,0,0,0,1,1};
         setSavingThrows(saves);
@@ -48,12 +48,12 @@ public class Cleric extends Classs {
         };
         setSkills(skills);
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("Chainmail");
         equipment.add("Mace");
-        equipment.add("Crossbow, light");
+        equipment.add("Light Crossbow");
+        equipment.add("Chainmail");
         equipment.add("Shield");
         equipment.add("Holy Symbol");
-        equipment.add("Explorer's pack");
+        equipment.add("Explorer's Pack");
         setEquipment(equipment);
 
         ArrayList<String[]> features= new ArrayList<>();

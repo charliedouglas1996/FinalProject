@@ -14,14 +14,14 @@ public class Paladin extends Classs {
     public Paladin(){
         setHitDice(10);
         ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("LightArmor");
-        aProfs.add("MediumArmor");
-        aProfs.add("HeavyArmor");
-        aProfs.add("Shield");
+        aProfs.add("Light Armor");
+        aProfs.add("Medium Armor");
+        aProfs.add("Heavy Armor");
+        aProfs.add("Shields");
         setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("SimpleWeapon");
-        wProfs.add("MartialWeapon");
+        wProfs.add("Simple Weapons");
+        wProfs.add("Martial Weapons");
         setWeaponProficiencies(wProfs);
         int[] saves={0,0,0,0,1,1};
         setSavingThrows(saves);
@@ -49,16 +49,17 @@ public class Paladin extends Classs {
         };
         setSkills(skills);
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("ChainMail");
         equipment.add("Longsword");
+        equipment.add("Javelin");
+        equipment.add("Javelin");
+        equipment.add("Javelin");
+        equipment.add("Javelin");
+        equipment.add("Javelin");
+        equipment.add("Chainmail");
         equipment.add("Shield");
-        equipment.add("Explorer's Pack");
         equipment.add("Holy Symbol");
-        equipment.add("Javelin");
-        equipment.add("Javelin");
-        equipment.add("Javelin");
-        equipment.add("Javelin");
-        equipment.add("Javelin");
+        equipment.add("Explorer's Pack");
+        setEquipment(equipment);
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Divine Sense","The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell. " +
                 "You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses."};

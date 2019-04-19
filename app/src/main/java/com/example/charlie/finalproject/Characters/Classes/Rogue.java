@@ -14,14 +14,14 @@ public class Rogue extends Classs {
     public Rogue(){
         setHitDice(8);
         ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("LightArmor");
+        aProfs.add("Light Armor");
         setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("SimpleWeapon");
-        wProfs.add("Crossbow, hand");
-        wProfs.add("Longsword");
-        wProfs.add("Rapier");
-        wProfs.add("Shortsword");
+        wProfs.add("Simple Weapons");
+        wProfs.add("Hand Crossbows");
+        wProfs.add("Longswords");
+        wProfs.add("Rapiers");
+        wProfs.add("Shortswords");
         setWeaponProficiencies(wProfs);
         ArrayList<String> tProfs=new ArrayList<>();
         tProfs.add("Thieves’ tools");
@@ -50,13 +50,14 @@ public class Rogue extends Classs {
         };
         setSkills(skills);
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("Leather armor");
         equipment.add("Rapier");
+        equipment.add("Dagger");
+        equipment.add("Dagger");
         equipment.add("Shortbow");
-        equipment.add("Dagger");
-        equipment.add("Dagger");
+        equipment.add("Leather armor");
         equipment.add("Thieves’ tools");
-        equipment.add("Explorer's pack");
+        equipment.add("Explorer's Pack");
+        setEquipment(equipment);
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Thieves’ Cant","During your rogue training you learned thieves’ cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.\n" +
                 "In addition, you understand a set of secret signs and symbols used to convey short, simple messages,such as whether an area is dangerous or the territory of a thieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run."};

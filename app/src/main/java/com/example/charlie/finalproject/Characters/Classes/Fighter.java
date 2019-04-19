@@ -14,14 +14,14 @@ public class Fighter extends Classs {
     public Fighter(){
         setHitDice(10);
         ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("LightArmor");
-        aProfs.add("MediumArmor");
-        aProfs.add("HeavyArmor");
-        aProfs.add("Shield");
+        aProfs.add("Light Armor");
+        aProfs.add("Medium Armor");
+        aProfs.add("Heavy Armor");
+        aProfs.add("Shields");
         setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("SimpleWeapon");
-        wProfs.add("MartialWeapon");
+        wProfs.add("Simple Weapons");
+        wProfs.add("Martial Weapons");
         setWeaponProficiencies(wProfs);
         int[] saves={1,0,1,0,0,0};
         setSavingThrows(saves);
@@ -49,11 +49,12 @@ public class Fighter extends Classs {
         };
         setSkills(skills);
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("ChainMail");
         equipment.add("Longsword");
+        equipment.add("Light Crossbow");
+        equipment.add("Chainmail");
         equipment.add("Shield");
         equipment.add("Explorer's Pack");
-        equipment.add("Crossbow, light");
+        setEquipment(equipment);
         ArrayList<String[]> features= new ArrayList<>();
         String[] feature1={"Fighting Style","You adopt a particular style of fighting as your specialty. Your fighting style is Defense:\n" +
                 "While you are wearing armor, you gain a +1 bonus to AC."};

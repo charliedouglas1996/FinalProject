@@ -14,11 +14,11 @@ public class Sorcerer extends Classs {
     public Sorcerer(){
         setHitDice(6);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("Dagger" );
-        wProfs.add("Dart" );
-        wProfs.add("Quarterstaff" );
-        wProfs.add("Sling" );
-        wProfs.add("Crossbow, light");
+        wProfs.add("Daggers" );
+        wProfs.add("Darts" );
+        wProfs.add("Quarterstaves" );
+        wProfs.add("Slings" );
+        wProfs.add("Light Crossbows");
         setWeaponProficiencies(wProfs);
         int[] saves={0,0,1,0,0,1};
         setSavingThrows(saves);
@@ -47,11 +47,11 @@ public class Sorcerer extends Classs {
         setSkills(skills);
 
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("Explorer's pack");
-        equipment.add("Crossbow, light");
         equipment.add("Dagger");
         equipment.add("Dagger");
+        equipment.add("Light Crossbow");
         equipment.add("Component pouch");
+        equipment.add("Explorer's Pack");
         setEquipment(equipment);
         //Features: Spellcasting, Sorcerous Origin
         //Spells:

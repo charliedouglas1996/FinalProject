@@ -15,21 +15,21 @@ public class Druid extends Classs {
         setHitDice(8);
 
         ArrayList<String> aProfs=new ArrayList<>();
-        aProfs.add("LightArmor");
-        aProfs.add("MediumArmor");
-        aProfs.add("Shield");
+        aProfs.add("Light Armor");
+        aProfs.add("Medium Armor");
+        aProfs.add("Shields");
         setArmorProficiencies(aProfs);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("Club");
-        wProfs.add("Dagger" );
-        wProfs.add("Dart" );
-        wProfs.add("Javelin" );
-        wProfs.add("Mace" );
-        wProfs.add("Quarterstaff" );
-        wProfs.add("Scimitar" );
-        wProfs.add("Sickle" );
-        wProfs.add("Sling" );
-        wProfs.add("Spear");
+        wProfs.add("Clubs");
+        wProfs.add("Daggers" );
+        wProfs.add("Darts" );
+        wProfs.add("Javelins" );
+        wProfs.add("Maces" );
+        wProfs.add("Quarterstaves" );
+        wProfs.add("Scimitars" );
+        wProfs.add("Sickles" );
+        wProfs.add("Slings" );
+        wProfs.add("Spears");
         setWeaponProficiencies(wProfs);
         int[] saves={0,0,0,1,1,0};
         setSavingThrows(saves);
@@ -58,11 +58,11 @@ public class Druid extends Classs {
         };
         setSkills(skills);
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("Leather armor");
         equipment.add("Quarterstaff");
+        equipment.add("Leather armor");
         equipment.add("Shield");
         equipment.add("Druidic focus");
-        equipment.add("Explorer's pack");
+        equipment.add("Explorer's Pack");
         setEquipment(equipment);
         //Features: Spellcasting, Druidic
         //Spells:
@@ -105,10 +105,10 @@ public class Druid extends Classs {
                 "The wood of a club or quarterstaff you are holding is imbued with nature’s power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon’s damage die becomes a d8. The weapon also becomes magical, if it isn’t already. The spell ends if you cast it again or if you let go of the weapon."};
         cantrips.add(cantrip2);
         setCantrips(cantrips);
-
+//
         ArrayList<String[]> spells=new ArrayList<>();
-        //Spells: Goodberry, Charm Person, Animal Friendship, and Healing Word
-        String[] spell1={spellList[0][9],"1st-level transmutation\n" +
+//        Spells: Goodberry, Charm Person, Animal Friendship, and Healing Word
+        String[] spell1={spellList[1][9],"1st-level transmutation\n" +
                 "Casting Time: 1 action\n" +
                 "Range: Touch\n" +
                 "Components: V, S, M (a sprig of mistletoe) \n" +

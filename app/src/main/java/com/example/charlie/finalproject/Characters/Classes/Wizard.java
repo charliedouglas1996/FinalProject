@@ -14,11 +14,11 @@ public class Wizard extends Classs {
     public Wizard(){
         setHitDice(6);
         ArrayList<String> wProfs=new ArrayList<>();
-        wProfs.add("Dagger" );
-        wProfs.add("Dart" );
-        wProfs.add("Quarterstaff" );
-        wProfs.add("Sling" );
-        wProfs.add("Crossbow, light");
+        wProfs.add("Daggers" );
+        wProfs.add("Darts" );
+        wProfs.add("Quarterstaves" );
+        wProfs.add("Slings" );
+        wProfs.add("Light Crossbows");
         setWeaponProficiencies(wProfs);
         int[] saves={0,0,0,1,1,0};
         setSavingThrows(saves);
@@ -47,8 +47,8 @@ public class Wizard extends Classs {
         setSkills(skills);
 
         ArrayList<String> equipment=new ArrayList<>();
-        equipment.add("Explorer's pack");
         equipment.add("Dagger");
+        equipment.add("Explorer's Pack");
         equipment.add("Component pouch");
         equipment.add("Spellbook");
         setEquipment(equipment);
